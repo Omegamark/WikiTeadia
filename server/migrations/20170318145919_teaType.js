@@ -8,6 +8,7 @@ exports.up = function(knex, Promise) {
     table.text('health_benefits');
     table.text('science');
     table.text('process');
+    table.string('pic_url');
     table.text('history');
     table.text('lore');
   });
