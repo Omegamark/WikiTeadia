@@ -3,26 +3,38 @@
     <div class="list list-inset">
     <label class="item item-input">
       <i class="icon ion-search placeholder-icon"></i>
-      <input type="text" placeholder="Looking for a specific tea?" ng-focus="buttonsVisible = false" ng-blur="buttonsVisible = true">
+      <input type="text" placeholder="Looking for a specific tea?"
+      ng-model="query"
+      ng-focus="buttonsVisible = false"
+      ng-blur="buttonsVisible = true">
     </label>
     </div>
-    <div class="searchButtons animate-show-hide" ng-show="buttonsVisible">
-      <button class="button button-outline button-light">
+
+    <!-- Search Button Filters -->
+    <div class="searchButtons animate-show-hide"
+    ng-show="buttonsVisible">
+      <button class="button button-outline button-light"
+      ng-click="toggleFilterType(1)">
         White
       </button>
-      <button class="button button-outline button-energized">
+      <button class="button button-outline button-energized"
+      ng-click="toggleFilterType(2)">
         Yellow
       </button>
-      <button class="button button-outline button-balanced">
+      <button class="button button-outline button-balanced"
+      ng-click="toggleFilterType(3)">
         Green
       </button>
-      <button class="button button-outline button-royal">
+      <button class="button button-outline button-royal"
+      ng-click="toggleFilterType(4)">
         Oolong
       </button>
-      <button class="button button-outline button-assertive">
+      <button class="button button-outline button-assertive"
+      ng-click="toggleFilterType(5)">
         Red
       </button>
-      <button class="button button-outline button-dark">
+      <button class="button button-outline button-dark"
+      ng-click="toggleFilterType(6)">
         Puer
       </button>
     </div>
@@ -41,11 +53,15 @@
           <!-- type here is the variable created by the above ng-repeat -->
 
           <a class="item"
-          ng-repeat="tea in getTeasByType(teas, type)">
+          ng-repeat="tea in getTeasByType(teas, type) | filter:query"
+          ng-click="runDeckModal($index)">
             {{tea.name}}
           </a>
         </div>
 
       </div>
+
+
+
   </ion-content>
 </ion-view>
