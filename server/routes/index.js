@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const knex = require('../db/connection');
 const dotenv = require('dotenv').config();
 const router = express.Router();

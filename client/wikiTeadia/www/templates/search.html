@@ -1,0 +1,51 @@
+<ion-view view-title="Search">
+  <ion-content>
+    <div class="list list-inset">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="Looking for a specific tea?" ng-focus="buttonsVisible = false" ng-blur="buttonsVisible = true">
+    </label>
+    </div>
+    <div class="searchButtons animate-show-hide" ng-show="buttonsVisible">
+      <button class="button button-outline button-light">
+        White
+      </button>
+      <button class="button button-outline button-energized">
+        Yellow
+      </button>
+      <button class="button button-outline button-balanced">
+        Green
+      </button>
+      <button class="button button-outline button-royal">
+        Oolong
+      </button>
+      <button class="button button-outline button-assertive">
+        Red
+      </button>
+      <button class="button button-outline button-dark">
+        Puer
+      </button>
+    </div>
+
+    </br>
+
+      <div class="list">
+
+        <div
+        ng-repeat="type in teaTypes">
+          <div class="item item-divider">
+            {{type.type}}
+          </div>
+
+          <!-- ng-repeat iterates over each type and then the subsequent div, a tag, and ng-repeat iterate for each iteration. -->
+          <!-- type here is the variable created by the above ng-repeat -->
+
+          <a class="item"
+          ng-repeat="tea in getTeasByType(teas, type)">
+            {{tea.name}}
+          </a>
+        </div>
+
+      </div>
+  </ion-content>
+</ion-view>
