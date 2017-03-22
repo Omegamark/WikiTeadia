@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('browse', function($scope, $http, $stateParams, NgMap) {
+.controller('mapCtrl', function($scope, $http, NgMap, $stateParams) {
   console.log('fuuuuuuuucccckkkkk!!!!!!!!');
   $scope.teas = [];
   $scope.filteredTypes = [];
