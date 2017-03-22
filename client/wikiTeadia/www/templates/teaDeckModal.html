@@ -1,0 +1,53 @@
+<!-- <ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear"
+      ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text"
+          ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password"
+          ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view> -->
+
+<ion-modal-view>
+  <div class="list card">
+
+    <div class="item item-avatar">
+      <img src="{{currentTea.teas.pic_url}}">
+      <h2>{{currentTea.chinese_name}}</h2>
+      <p>November 05, 1955</p>
+    </div>
+
+    <div class="item item-body">
+      <img class="full-image" src="delorean.jpg">
+      <p>
+        This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+        the content is from a card-body consisting of an image and paragraph text. The footer
+        consists of tabs, icons aligned left, within the card-footer.
+      </p>
+      <p>
+        <a href="#" class="subdued">1 Like</a>
+        <a href="#" class="subdued">5 Comments</a>
+      </p>
+    </div>
+
+  </div>
+</ion-modal-view>
