@@ -1,5 +1,11 @@
 angular.module('starter.controllers', [])
 
+.service('searchToMapService', function() {
+  var serve = {};
+  console.log('hello from the service', serve);
+  return serve
+})
+
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
@@ -41,7 +47,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('mapCtrl', function($scope, $http, NgMap, $stateParams) {
+.controller('mapCtrl', function($scope, $http, NgMap, searchToMapService, $stateParams) {
   console.log('fuuuuuuuucccckkkkk!!!!!!!!');
   $scope.teas = [];
   $scope.filteredTypes = [];
@@ -50,6 +56,8 @@ angular.module('starter.controllers', [])
       $scope.teas = data.data;
       console.log($scope.teas);
     });
+
+    console.log('mapCtrl service variable', searchToMapService.data);
 
     // Filter touches on each item in the object and returns only the ones which meet the criteria. "type" refers to the type created by the ng-repeat on in search.html
     // *Has some unwanted behavior due to what's in the array, fix after MVP
@@ -94,25 +102,13 @@ angular.module('starter.controllers', [])
       console.log($scope.teaTypes[0].type);
       // console.log($scope.teaTypes.data);
   });
-
-
-  //
-  // $scope.getData();
-//   $scope.teaTypes = [
-//     { title: 'Reggae', id: 1 },
-//     { title: 'Chill', id: 2 },
-//     { title: 'Dubstep', id: 3 },
-//     { title: 'Indie', id: 4 },
-//     { title: 'Rap', id: 5 },
-//     { title: 'Cowbell', id: 6 }
-//   ];
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 
 })
 
-.controller('Searchctrl', function ($scope, $ionicModal, $http, $stateParams, $timeout) {
+.controller('Searchctrl', function ($scope, $ionicModal, searchToMapService, $http, $stateParams, $timeout) {
   //Getting the teaTypes for search list headers
   $scope.teaTypes = [];
 
@@ -191,8 +187,10 @@ $scope.doLogin = function() {
 
 $scope.showTea = function(tea) {
   $scope.currentTea = tea;
-  console.log('clicked');
-  console.log($scope.currentTea);
+  searchToMapService.data = tea;
+
+
+  // console.log($scope.currentTea);
   $scope.modal.show();
 };
 
@@ -202,3 +200,10 @@ $scope.showTea = function(tea) {
 
 
 });
+
+// Services
+
+// angular.module('starter.controllers', [])
+//   .service('searchToMapService', function() {
+//     var serve = {};
+//   })

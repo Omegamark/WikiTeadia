@@ -1,4 +1,4 @@
-<ion-view view-title="Search">
+<ion-view view-title="Search"  class="bg">
   <ion-content>
     <div class="list list-inset">
     <label class="item item-input">
@@ -43,7 +43,7 @@
 
       <div class="list">
 
-        <div
+        <div class="teaTypes"
         ng-repeat="type in teaTypes">
           <div class="item item-divider">
             {{type.type}}
@@ -52,7 +52,7 @@
           <!-- ng-repeat iterates over each type and then the subsequent div, a tag, and ng-repeat iterate for each iteration. -->
           <!-- type here is the variable created by the above ng-repeat -->
 
-          <a class="item"
+          <a class="item teas"
           ng-repeat="tea in getTeasByType(teas, type) | filter:query"
           ng-click="showTea(tea)">
             {{tea.name}}
