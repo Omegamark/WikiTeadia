@@ -1,12 +1,49 @@
 <ion-view view-title="Map">
   <ion-content>
-    <h1>Browse</h1>
 
-    <ng-map zoom="4" center="-33, 151">
-      <marker position="-33.890542, 151.274856"
-        icon="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png">
+
+    <ng-map id="map" zoom="4" center="{{teaData.lat}}, {{teaData.long}}">
+      <marker id="mapIcon" position="{{teaData.lat}}, {{teaData.long}}"
+        icon="../img/teaLeafTiny.png">
       </marker>
     </ng-map>
+    <section id="teaContent">
+      <div class="list card">
+
+        <div class="item item-avatar">
+          <img src="{{teaData.pic_url}}">
+          <h2>{{teaData.chinese_name}}</h2>
+          <p>{{teaData.name}}</p>
+        </div>
+
+        <div class="item item-body">
+          <img class="full-image" src="{{searchToMapService.data.pic_url}}">
+
+
+
+          <!-- These need to populate from the controller object, but they don't -->
+          <p>
+          <strong>Flavor Profile: </strong> {{teaData.flavor}}
+          </p>
+
+
+          <p>
+            <strong>History: </strong> {{teaData.history}}
+          </p>
+
+          <p>
+            <strong>Science: </strong> {{teaData.science}}
+          </p>
+
+          <p>
+            <strong>Lore:</strong> {{teaData.lore}}
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
 
   </ion-content>
 </ion-view>

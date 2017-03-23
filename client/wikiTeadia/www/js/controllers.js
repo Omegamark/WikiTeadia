@@ -49,15 +49,34 @@ angular.module('starter.controllers', [])
 
 .controller('mapCtrl', function($scope, $http, NgMap, searchToMapService, $stateParams) {
   console.log('fuuuuuuuucccckkkkk!!!!!!!!');
+
   $scope.teas = [];
   $scope.filteredTypes = [];
-  $http.get(`http://localhost:3000/teas`)
-    .then(function(data) {
-      $scope.teas = data.data;
-      console.log($scope.teas);
-    });
+  // $http.get(`http://localhost:3000/teas`)
+  //   .then(function(data) {
+  //     $scope.teas = data.data;
+  //     console.log($scope.teas);
+  //   });
 
-    console.log('mapCtrl service variable', searchToMapService.data);
+  $scope.teaData = searchToMapService.data;
+  console.log('testes 123', $scope.teaData);
+
+
+
+
+
+
+  // This is working, but the data is not showing up!!!!!!!!!!!!!
+    var check = function() {
+      console.log('mapCtrl service variable', searchToMapService.data);
+    };
+    check();
+
+
+
+
+
+
 
     // Filter touches on each item in the object and returns only the ones which meet the criteria. "type" refers to the type created by the ng-repeat on in search.html
     // *Has some unwanted behavior due to what's in the array, fix after MVP
@@ -190,7 +209,7 @@ $scope.showTea = function(tea) {
   searchToMapService.data = tea;
 
 
-  // console.log($scope.currentTea);
+  console.log(searchToMapService.data);
   $scope.modal.show();
 };
 

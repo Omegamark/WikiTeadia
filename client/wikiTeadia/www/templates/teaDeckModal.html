@@ -30,22 +30,33 @@
 <ion-modal-view>
   <div class="list card">
 
+    <!-- <div class="returnArrow">
+      <i class="icon ion-arrow-return-left"
+      ng-click="closeLogin()"></i>
+    </div> -->
+
     <div class="item item-avatar">
-      <img src="{{currentTea.teas.pic_url}}">
+
+      <img src="{{currentTea.pic_url}}">
+        <div class="returnArrow">
+          <i class="icon ion-arrow-return-left"
+          ng-click="closeLogin()"></i>
+        </div>
       <h2>{{currentTea.chinese_name}}</h2>
-      <p>November 05, 1955</p>
+      <!-- <p>November 05, 1955</p> -->
     </div>
 
     <div class="item item-body">
-      <img class="full-image" src="delorean.jpg">
+      <a href="#/app/map"
+      ng-click="closeLogin()"><i class="icon ion-map"></i> - More Detail</a>
       <p>
-        This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-        the content is from a card-body consisting of an image and paragraph text. The footer
-        consists of tabs, icons aligned left, within the card-footer.
+      {{currentTea.description}}
       </p>
       <p>
-        <a href="#" class="subdued">1 Like</a>
-        <a href="#" class="subdued">5 Comments</a>
+        <!-- Add a click function which takes you to the lat long on the map -->
+        <a href="#/" class="subdued"
+        ng-click=""><i class="icon ion-star"></i> Favorite?</a>
+        <!-- <a href="#" class="subdued">5 Comments</a> -->
       </p>
     </div>
 

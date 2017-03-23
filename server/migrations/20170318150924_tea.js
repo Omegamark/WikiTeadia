@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments();
     table.string('name');
     table.string('chinese_name');
-    table.integer('tea_type_id').references('tea_type.id').unsigned().onDelete('CASCADE')
+    table.integer('tea_type_id').references('tea_type.id').unsigned().onDelete('CASCADE');
     table.text('description');
     table.text('flavor');
     table.text('science');
