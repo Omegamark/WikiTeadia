@@ -48,7 +48,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('mapCtrl', function($scope, $http, NgMap, searchToMapService, $stateParams) {
-  console.log('fuuuuuuuucccckkkkk!!!!!!!!');
+  
 
   $scope.teas = [];
   $scope.filteredTypes = [];
