@@ -45,14 +45,14 @@
 
         <div class="teaTypes"
         ng-repeat="type in teaTypes">
-          <div class="item item-divider">
+          <div class="item item-divider balanced">
             {{type.type}}
           </div>
 
           <!-- ng-repeat iterates over each type and then the subsequent div, a tag, and ng-repeat iterate for each iteration. -->
           <!-- type here is the variable created by the above ng-repeat -->
 
-          <a class="item teas"
+          <a class="item teas calm"
           ng-repeat="tea in getTeasByType(teas, type) | filter:query"
           ng-click="showTea(tea)">
             {{tea.name}}
