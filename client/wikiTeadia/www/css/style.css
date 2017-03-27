@@ -1,8 +1,27 @@
 /* Empty. Add your own CSS if you like */
+/*.splash{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  font-size: 3.5em;
+  background: black;*/
+
+
+/*}*/
+/*.scroll {
+    display: flex;
+    align-items: center;*/
+    /* justify-content: center; */
+/*}*/
 .searchButtons {
   display: flex;
   justify-content: space-around;
 
+}
+ion-content.teaTypes.scroll-content.ionic-scroll.has-header {
+    display: flex;
+    justify-content: center;
 }
 
 .animate-show-hide.ng-hide {
@@ -44,12 +63,17 @@
   background: url('../img/teaField.jpg') no-repeat center;
 }
 
+.bgSplash {
+  animation: 5s fadein;
+  background: url('../img/teaField.jpg') no-repeat center;
+}
+
 .teas {
   opacity: 0.9;
 }
 
 .teaTypes {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 /*Map Icon on Tea Modal*/
@@ -57,4 +81,27 @@
 .returnArrow {
   display: flex;
   justify-content: flex-end;
+}
+
+/*Search list fade in*/
+.img-circle {
+    -webkit-animation: fadein 2.5s; /* Safari and Chrome */
+    -moz-animation: fadein 2.5s; /* Firefox */
+    -ms-animation: fadein 2.5s; /* Internet Explorer */
+    -o-animation: fadein 2.5s; /* Opera */
+    animation: fadein 2.5s;
+}
+
+.fade-in {
+  animation: 0.5s fadein;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
