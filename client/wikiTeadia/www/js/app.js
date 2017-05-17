@@ -32,12 +32,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngAnimate', 'ngMap']
     controller: 'AppCtrl'
   })
 
+  .state('app.profile', {
+    url: '/profile',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/profile.html',
+        controller: 'profileCtrl'
+      }
+    }
+  })
+
+
   .state('app.search', {
     url: '/search',
     views: {
       'menuContent': {
         templateUrl: 'templates/search.html',
-        controller: 'Searchctrl'
+        controller: 'searchCtrl'
       }
     }
   })
@@ -51,6 +62,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngAnimate', 'ngMap']
         }
       }
     })
+
     .state('app.teaTypes', {
       url: '/teaTypes',
       views: {
