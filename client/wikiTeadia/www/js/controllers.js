@@ -28,6 +28,9 @@ angular.module('starter.controllers', [])
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
+    console.log('this is window', window.location)
+  // This redirects to the profile view. Works with both iOS and Android.
+    window.location.replace("http://10.6.81.62:8100/?ionicplatform=ios#/app/profile")
   };
 
   // Open the login modal
