@@ -5,14 +5,14 @@
       <i class="icon ion-search placeholder-icon"></i>
       <input type="text" placeholder="Looking for a specific tea?"
       ng-model="query"
-      ng-focus="buttonsVisible = false"
-      ng-blur="buttonsVisible = true">
+      ng-blur="buttonsVisible = false"
+      ng-focus="buttonsVisible = true">
     </label>
     </div>
 
     <!-- Search Button Filters -->
     <div class="searchButtons animate-show-hide"
-    ng-show="buttonsVisible">
+    ng-hide="buttonsVisible">
       <button class="button button-outline button-light"
       ng-click="toggleFilterType(1)">
         白
