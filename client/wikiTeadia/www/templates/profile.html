@@ -1,5 +1,41 @@
-<ion-view view-title="Profile" class="bg">
+<ion-view view-title="Profile">
+  <!-- bg is a placeholder, have the background be a random picture of a tea -->
+
   <ion-content>
-    <h1>Profile Page</h1>
+    <div class="bg profile profileHeader">
+      <!-- <p class="">Hi {{fix this thing}}</p> Use a service to get the stored "loggedInUser" variable to use within the profile view-->
+    </div>
+  <div class="list profileContent">
+  <a class="item item-icon-left" href="#">
+    <!-- Make favorites expandable to included "Teas", "Reviews", "Brew Techniques" -->
+    <i class="icon ion-coffee"></i>
+    Favorite Teas
+    <span class="badge badge-assertive">0</span>
+  </a>
+
+  <a class="item item-icon-left item-icon-right" href="#">
+    <i class="icon ion-person-stalker"></i>
+    Following
+    <span class="badge badge-assertive">0</span>
+  </a>
+  <!-- Make "My ..." expandable to include: Followers, Reviews, Suggestions -->
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-ios-people"></i>
+    My Followers
+    <span class="badge badge-assertive">0</span>
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-chatbubble"></i>
+    My Reviews
+    <span class="badge badge-assertive">0</span>
+  </a>
+
+  <a class="item item-icon-left" href="#">
+    <i class="icon ion-ios-lightbulb"></i>
+    My Suggestions
+    <span class="badge badge-assertive">0</span>
+  </a>
+  </div>
   </ion-content>
 </ion-view>

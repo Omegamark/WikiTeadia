@@ -89,3 +89,21 @@ ion-content.teaTypes.scroll-content.ionic-scroll.has-header {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
+
+/*Profile view styling*/
+.profile {
+  width: 100vw;
+  height: 20vh;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  font-size: 2em;
+}
+
+.profileContent {
+  width: 100vw;
+  height: 80vh;
+}

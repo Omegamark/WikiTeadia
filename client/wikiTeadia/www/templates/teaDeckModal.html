@@ -1,39 +1,5 @@
-<!-- <ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear"
-      ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text"
-          ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password"
-          ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
-      </div>
-    </form>
-  </ion-content>
-</ion-modal-view> -->
-
 <ion-modal-view>
   <div class="list card">
-
-    <!-- <div class="returnArrow">
-      <i class="icon ion-arrow-return-left"
-      ng-click="closeLogin()"></i>
-    </div> -->
 
     <div class="item item-avatar">
 
@@ -47,14 +13,14 @@
     </div>
 
     <div class="item item-body">
-      <a href="#/app/map"
+      <a ui-sref="app.map"
       ng-click="closeLogin()"><i class="icon ion-map"></i> - More Detail</a>
       <p>
       {{currentTea.description}}
       </p>
       <p>
         <!-- Add a click function which takes you to the lat long on the map -->
-        <a href="#/" class="subdued"
+        <a ui-sref="add the proper state here" class="subdued"
         ng-click=""><i class="icon ion-star"></i> Favorite?</a>
         <!-- <a href="#" class="subdued">5 Comments</a> -->
       </p>

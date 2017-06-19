@@ -6,7 +6,9 @@ angular.module('starter.controllers', [])
   return serve;
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+
+
+.controller('AppCtrl', function($scope, $http, $ionicModal, $timeout, $state) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -14,6 +16,20 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+
+  // Getting user information to check against the form.
+  $scope.DBprofiles;
+  $http.get(`http://localhost:3000/profiles`)
+    .then(function(data) {
+      console.log(data.data);
+      $scope.DBprofiles = data.data;
+      console.log($scope.DBprofiles);
+    });
+
+
+
+
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -30,7 +46,6 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
     console.log('this is window', window.location)
   // This redirects to the profile view. Works with both iOS and Android.
-    window.location.replace("http://10.6.81.62:8100/?ionicplatform=ios#/app/profile")
   };
 
   // Open the login modal
@@ -41,12 +56,24 @@ angular.module('starter.controllers', [])
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
+    console.log('this is login data', $scope.loginData)
+    // Check form data against database
+    for(var i = 0; i < $scope.DBprofiles.length; i++) {
+      if($scope.loginData.username === $scope.DBprofiles[i].username && $scope.loginData.password === $scope.DBprofiles[i].password) {
+        //window.location.replace("http://10.6.81.62:8100/?ionicplatform=ios#/app/profile");
+        $scope.closeLogin();
+
+        return $state.go('app.profile')
+      }
+    }
+        alert('Wrong Username or Password')
+
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    // $timeout(function() {
+    //
+    // }, 1000);
   };
 })
 
@@ -77,9 +104,18 @@ angular.module('starter.controllers', [])
   });
 })
 
-.controller('profileCtrl', function($scope, $stateParams) {
+.controller('profileCtrl', function($scope, $http, $stateParams) {
 
   console.log('profile sanity check');
+  $scope.profiles = [];
+
+  $http.get(`http://localhost:3000/profiles`)
+    .then(function(data) {
+      // console.log(data);
+      $scope.profiles = data.data;
+      console.log($scope.profiles);
+    });
+// Create and use a service from the login view to populate this with the data from the logged in user.
 })
 
 .controller('searchCtrl', function ($scope, $ionicModal, searchToMapService, $http, $stateParams, $timeout) {
