@@ -15,6 +15,8 @@ The server uses PostgreSQL, Nodejs, Express and passportjs. For further informat
   * **$ ~/wikiTeadia/server/knex migrate:latest**
 5. Run the knexjs seeds:
   * **$ ~/wikiTeadia/server/knex seed:run**
+6. Run the server:
+  * **$ ~/wikiTeadia/server/nodemon**
 
 ### Client:
 WikiTeadia uses *Angular 1.x* along with Ionic *Framework v1*. Please visit the corresponding docs for installation instructions and troubleshooting.
